@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EnchantedArchives</string>
+    <string name="btnStart">Start</string>
+    <string name="btnGo">I am ready</string>
+    <string name="MainPageText">Are you ready to plunge into the enchanting world of mysterious artifacts and unravel the secrets they hold? Then press the button, good luck)</string>
+    <string name="rules">Welcome to the Magic Archive quest! In this mystical adventure, participants will embark on a journey to correctly classify various magical items based on their properties and history. Get ready to immerse yourself in the enchanting world of mysterious artifacts and unravel the secrets they hold. Sharpen your mind, let your imagination run wild and begin your quest for knowledge! Good luck, brave seekers of magic!</string>
+</resources>

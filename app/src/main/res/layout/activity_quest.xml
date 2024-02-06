@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#141927"
+    tools:context=".QuestActivity">
+
+    <RelativeLayout
+        android:layout_width="410dp"
+        android:layout_height="732dp"
+        android:layout_marginBottom="72dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="60dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context=".QuestActivity"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/questionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/questionTextView"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="190dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/radioGroup"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="#21283F"
+            android:text="@string/next"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="18dp"
+            android:backgroundTint="#21283F"
+            android:text="@string/home"
+            android:onClick="goMainPage"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/cycleButton"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="14dp"
+            android:backgroundTint="#21283F"
+            android:text="@string/cycle"
+            android:onClick="goToPageWithQuest"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

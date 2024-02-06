@@ -1,0 +1,5 @@
+<resources>
+    <string name="next">Дальше</string>
+    <string name="cycle">Пройти заново</string>
+    <string name="home">На главную</string>
+</resources>
