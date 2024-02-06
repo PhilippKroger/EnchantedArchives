@@ -10,7 +10,6 @@ class RulesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rules)
     }
-
     fun goToPageWithQuest(view: View) {
         val intent = Intent(this, QuestActivity::class.java)
         startActivity(intent)

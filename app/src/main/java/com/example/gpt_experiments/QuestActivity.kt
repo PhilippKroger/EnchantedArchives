@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.util.TypedValue
 import android.view.View
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
@@ -17,38 +16,11 @@ class QuestActivity : AppCompatActivity() {
     private lateinit var questionTextView: TextView
     private lateinit var radioGroup: RadioGroup
     private lateinit var submitButton: Button
-
+    private lateinit var rezBtn1: Button
+    private lateinit var rezBtn2: Button
 
     private var currentQuestionIndex = 0
     private var score = 0
-
-    private val questions = arrayOf(
-        "Какой магический предмет обладает способностью предсказывать будущее и может принимать разные формы?",
-        "Какой магический предмет может вызывать и контролировать элементы природы, такие как огонь, вода, земля и воздух?",
-        "Какой магический предмет используется для превращения одного объекта в другой и имеет форму маленького котелка?",
-        "Какой магический предмет позволяет своему обладателю летать и управлять погодой?",
-        "С помощью какого магического предмета можно читать мысли других людей?",
-        "Какой магический предмет имеет способность исцелять раны и восстанавливать жизненную энергию?",
-        "Какой магический предмет может проникать в мечты людей и манипулировать их содержанием?",
-        "Какой магический предмет может превращать людей и животных в каменные статуи?",
-        "Какой магический предмет предоставляет своему обладателю невидимость и неприкосновенность перед другими магическими существами?",
-        "Какой магический предмет обладает силой управлять живыми существами и заставлять их служить своему обладателю? "
-    )
-
-    private val answers = arrayOf(
-        arrayOf("Колдовское зеркало", "Гримуар ", "Мантия-невидимка"),
-        arrayOf("Огненный жезл", "Амулет стихий", "Кристалл мощи"),
-        arrayOf("Магический пендель", "Алхимическая реторта", "Метла-велосипед"),
-        arrayOf("Летучий ковер", "Метла-машина", "Перстень власти"),
-        arrayOf("Книга теней", "Кристаллический шар", "Руна ментальной прозрачности"),
-        arrayOf("Светящаяся амулетка", "Зелье бессмертия", "Посох исцеления"),
-        arrayOf("Сновидящий стеллаж", "Кольцо сновидений", "Фляжка с сновидениями"),
-        arrayOf("Медузин глаз", "Каменный артефакт", "Маска непоколебимости"),
-        arrayOf("Плащ-невидимка", "Теневой амулет", "Посох дымовых облаков"),
-        arrayOf("Посох контроля", "Контролирующее око", "Записная книжка управления")
-    )
-
-    private val correctAnswers = arrayOf(0, 1, 1, 0, 1, 2, 1, 0, 0, 0)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,23 +29,18 @@ class QuestActivity : AppCompatActivity() {
         questionTextView = findViewById(R.id.questionTextView)
         radioGroup = findViewById(R.id.radioGroup)
         submitButton = findViewById(R.id.submitButton)
+        rezBtn1 = findViewById(R.id.homeButton)
+        rezBtn2 = findViewById(R.id.cycleButton)
+
+        rezBtn1.visibility = View.GONE
+        rezBtn2.visibility = View.GONE
 
         showQuestion()
-        val rezBtn1 = findViewById<Button>(R.id.homeButton)
-        val rezBtn2 = findViewById<Button>(R.id.cycleButton)
-        rezBtn1.visibility = View.GONE
 
-        rezBtn2.visibility = View.GONE
         submitButton.setOnClickListener {
             checkAnswer()
         }
     }
-    val colors = listOf(
-        Color.RED,
-        Color.GREEN,
-        Color.BLUE,
-        Color.WHITE
-    )
 
     private fun showQuestion() {
         val question = questions[currentQuestionIndex]
@@ -85,7 +52,7 @@ class QuestActivity : AppCompatActivity() {
         for (i in options.indices) {
             val radioButton = RadioButton(this)
             radioButton.text = options[i]
-            radioButton.setTextColor(colors[3])
+            radioButton.setTextColor(Color.WHITE)
             radioButton.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20f)
             radioButton.id = i
             radioGroup.addView(radioButton)
@@ -136,5 +103,33 @@ class QuestActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    companion object {
+        private val questions = arrayOf(
+            "Какой магический предмет обладает способностью предсказывать будущее и может принимать разные формы?",
+            "Какой магический предмет может вызывать и контролировать элементы природы, такие как огонь, вода, земля и воздух?",
+            "Какой магический предмет используется для превращения одного объекта в другой и имеет форму маленького котелка?",
+            "Какой магический предмет позволяет своему обладателю летать и управлять погодой?",
+            "С помощью какого магического предмета можно читать мысли других людей?",
+            "Какой магический предмет имеет способность исцелять раны и восстанавливать жизненную энергию?",
+            "Какой магический предмет может проникать в мечты людей и манипулировать их содержанием?",
+            "Какой магический предмет может превращать людей и животных в каменные статуи?",
+            "Какой магический предмет предоставляет своему обладателю невидимость и неприкосновенность перед другими магическими существами?",
+            "Какой магический предмет обладает силой управлять живыми существами и заставлять их служить своему обладателю? "
+        )
 
+        private val answers = arrayOf(
+            arrayOf("Колдовское зеркало", "Гримуар ", "Мантия-невидимка"),
+            arrayOf("Огненный жезл", "Амулет стихий", "Кристалл мощи"),
+            arrayOf("Магический пендель", "Алхимическая реторта", "Метла-велосипед"),
+            arrayOf("Летучий ковер", "Метла-машина", "Перстень власти"),
+            arrayOf("Книга теней", "Кристаллический шар", "Руна ментальной прозрачности"),
+            arrayOf("Светящаяся амулетка", "Зелье бессмертия", "Посох исцеления"),
+            arrayOf("Сновидящий стеллаж", "Кольцо сновидений", "Фляжка с сновидениями"),
+            arrayOf("Медузин глаз", "Каменный артефакт", "Маска непоколебимости"),
+            arrayOf("Плащ-невидимка", "Теневой амулет", "Посох дымовых облаков"),
+            arrayOf("Посох контроля", "Контролирующее око", "Записная книжка управления")
+        )
+
+        private val correctAnswers = arrayOf(0, 1, 1, 0, 1, 2, 1, 0, 0, 0)
+    }
 }
